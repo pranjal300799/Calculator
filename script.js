@@ -1,6 +1,6 @@
 function addTwoNumbers(a,b)
 {
-    let sum=a+b;
+    let result=a+b;
     return result;
 }
 function subtractTwoNumbers(a,b)
