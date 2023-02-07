@@ -3,17 +3,17 @@ function addTwoNumbers(a,b)
     let sum=a+b;
     return result;
 }
-function subtractTwoNUmber(a,b)
+function subtractTwoNumbers(a,b)
 {
     let result=a-b;
     return result;
 }
-function multiplyTwoNumber(a,b)
+function multiplyTwoNumbers(a,b)
 {
     let result=a*b;
     return result;
 }
-function divideTwoNUmbers(a,b)
+function divideTwoNumbers(a,b)
 {
     let result=(a*1.0)/b;
     return result;
