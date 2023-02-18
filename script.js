@@ -29,3 +29,5 @@ function giveRemainder(a,b)
     let result =a%b;
     return result;
 }
+const inputscreen=document.querySelector('.screen .input');
+const resultscreen=document.querySelector('.screen .result');
