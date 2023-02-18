@@ -39,3 +39,10 @@ function addEvents()
     operators.forEach(operator=>operator.addEventListener('click',getInput));
 }
 addEvents();
+function getInput(e)
+{  
+    let input=e.target.getAttribute('data-key');
+    let inputType=processInput(input);
+    displayOnScreen(inputType,input);
+
+}
