@@ -31,3 +31,11 @@ function giveRemainder(a,b)
 }
 const inputscreen=document.querySelector('.screen .input');
 const resultscreen=document.querySelector('.screen .result');
+function addEvents()
+{
+    let digits=document.querySelectorAll('.digit');
+    digits.forEach(digit=>digit.addEventListener('click',getInput));
+    let operators=document.querySelectorAll('.operator')
+    operators.forEach(operator=>operator.addEventListener('click',getInput));
+}
+addEvents();
