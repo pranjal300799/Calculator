@@ -46,3 +46,14 @@ function getInput(e)
     displayOnScreen(inputType,input);
 
 }
+function processInput(input)
+{
+    if(!isNaN(input)||input==='.')
+    {
+        return 'number/point';
+    }
+    else
+    {
+       return 'operator';
+    }
+}    
