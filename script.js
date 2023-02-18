@@ -1,19 +1,19 @@
-function addTwoNumbers(a,b)
+function add(a,b)
 {
     let result=a+b;
     return result;
 }
-function subtractTwoNumbers(a,b)
+function subtract(a,b)
 {
     let result=a-b;
     return result;
 }
-function multiplyTwoNumbers(a,b)
+function multiply(a,b)
 {
     let result=a*b;
     return result;
 }
-function divideTwoNumbers(a,b)
+function divide(a,b)
 {
     let result=(a*1.0)/b;
     return result;
