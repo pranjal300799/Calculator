@@ -25,7 +25,20 @@ body
     height:200px;
     border:5px solid orangered;
     background-color: rgb(172, 241, 219);
-    border-radius: 50px;
+    border-radius: 30px;
+    font-size:50px;
+    display:flex;
+    flex-direction: column;
+}
+.screen>div
+{
+    height:100px;
+    background-color: rgb(172, 241, 219);
+    border-radius: 30px;
+    font-size:50px;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items:flex-end;
 }
 .input-panel
 {   
