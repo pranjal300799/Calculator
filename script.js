@@ -1,3 +1,9 @@
+const data=
+{
+    operandOne:'',
+    operandTwo:'',
+    sign:''
+};
 function add(a,b)
 {
     let result=a+b;
