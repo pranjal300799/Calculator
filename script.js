@@ -4,6 +4,7 @@ const data=
     operandTwo:'',
     sign:''
 };
+let dotCounter=0;
 function add(a,b)
 {
     let result=a+b;
@@ -57,3 +58,14 @@ function processInput(input)
        return 'operator';
     }
 }    
+function displayOnScreen(inputType,input)
+{
+    if(!isNaN(input)||(input==='.'&&dotCounter===0))
+    {   
+        inputscreen.textContent+=input;
+    }
+    else
+    {  
+       generateCalculationSequence(input,flag);
+    }
+}
