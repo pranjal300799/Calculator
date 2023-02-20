@@ -39,6 +39,8 @@ function addEvents()
     digits.forEach(digit=>digit.addEventListener('click',getInput));
     let operators=document.querySelectorAll('.operator')
     operators.forEach(operator=>operator.addEventListener('click',getInput));
+    let reset=document.querySelector('.reset');
+    reset.addEventListener('click',resetCalculator)
 }
 addEvents();
 function getInput(e)
@@ -172,4 +174,8 @@ function isFloat(num)
     {
         return false;
     }
+}
+function resetCalculator()
+{
+    location.reload()
 }
