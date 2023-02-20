@@ -3,10 +3,28 @@ body
     height:100vh;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    background-color:whitesmoke;
+    justify-content:space-between;
+    background-color:rgb(255, 255, 255);
+    margin:0;
 
+}
+.header
+{   
+    font-size:100px;
+    color:orangered;
+    display:flex;
+    justify-content:center;
+    height:15%;
+}
+.footer
+{
+    flex:0;
+    font-size:60px;
+    color:rgb(255, 0, 0);
+    display:flex;
+    justify-content:center;
+    height:15%;
+    background-color: pink;
 }
 .outline
 {   
@@ -19,7 +37,8 @@ body
     padding:50px;
     gap:100px;
     background-color:rgb(65, 154, 236);
-    border: 10px solid rgb(165, 78, 192)
+    border: 10px solid rgb(165, 78, 192);
+    align-self:center;
 }
 .screen
 {
