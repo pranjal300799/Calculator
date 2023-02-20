@@ -5,6 +5,7 @@ const data=
     sign:''
 };
 let dotCounter=0;
+let flag=true;
 function add(a,b)
 {
     let result=a+b;
