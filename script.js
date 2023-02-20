@@ -2,7 +2,7 @@ const data=
 {
     operandOne:'',
     operandTwo:'',
-    sign:''
+    sign:'initial'
 };
 let dotCounter=0;
 let flag=true;
@@ -63,7 +63,10 @@ function displayOnScreen(inputType,input)
 {
     if(!isNaN(input)||(input==='.'&&dotCounter===0))
     {   
-        inputscreen.textContent+=input;
+        if(data.sign!=='')//prevent input if no operator is present inside data.sign
+        {
+           inputscreen.textContent+=input;
+        }
     }
     else
     {  
@@ -98,6 +101,7 @@ function generateCalculationSequence(sign)//
         if(getInputScreenStatus())
         {
             data.operandTwo=inputscreen.textContent;
+            console.log(data.operandTwo);
             inputscreen.textContent='';
             data.operandOne=generateResult(); 
             resultscreen.textContent=data.operandOne;
@@ -129,7 +133,7 @@ function generateCalculationSequence(sign)//
                     resultscreen.textContent=text;
                 }
             }
-            //if no operator inside  data.sign is present
+            //if no operato=r inside  data.sign is present
             else
             {
                 if(sign!=='=')
