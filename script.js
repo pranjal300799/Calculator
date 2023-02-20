@@ -24,6 +24,11 @@ function multiply(a,b)
 function divide(a,b)
 {
     let result=(a*1.0)/b;
+    if (result=='Infinity')
+    {
+        handleMathError();
+        return 'MathError';
+    }
     return isFloat(result)?result.toFixed(2):result;
 }
 function giveRemainder(a,b)
@@ -178,4 +183,9 @@ function isFloat(num)
 function resetCalculator()
 {
     location.reload()
+}
+function handleMathError()
+{
+    inputscreen.textContent='Resetting...';
+    setTimeout(resetCalculator,2000);
 }
