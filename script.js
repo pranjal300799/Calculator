@@ -9,27 +9,27 @@ let flag=true;
 function add(a,b)
 {
     let result=a+b;
-    return result;
+    return isFloat(result)?result.toFixed(2):result;
 }
 function subtract(a,b)
 {
     let result=a-b;
-    return result;
+    return isFloat(result)?result.toFixed(2):result;
 }
 function multiply(a,b)
 {
     let result=a*b;
-    return result;
+    return isFloat(result)?result.toFixed(2):result;
 }
 function divide(a,b)
 {
     let result=(a*1.0)/b;
-    return result;
+    return isFloat(result)?result.toFixed(2):result;
 }
 function giveRemainder(a,b)
 {
     let result =a%b;
-    return result;
+    return isFloat(result)?result.toFixed(2):result;
 }
 const inputscreen=document.querySelector('.screen .input');
 const resultscreen=document.querySelector('.screen .result');
@@ -99,7 +99,7 @@ function generateCalculationSequence(sign)//
         {
             data.operandTwo=inputscreen.textContent;
             inputscreen.textContent='';
-            data.operandOne=generateResult();
+            data.operandOne=generateResult(); 
             resultscreen.textContent=data.operandOne;
             data.operandTwo='';
             //if sign is not '=' then update the operator
