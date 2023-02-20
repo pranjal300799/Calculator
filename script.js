@@ -74,3 +74,70 @@ function getInputScreenStatus()
 {
     return (inputscreen.textContent!=='')?true:false;
 }
+function generateCalculationSequence(sign)//
+{
+    if(flag)//only for 1st registering 1st entry of operandone after page load
+    {   if(sign!=='='&&getInputScreenStatus())//allows only arthmetic operators to act after operandone input
+        {
+            //read operand one from screen
+            data.operandOne=inputscreen.textContent;
+            inputscreen.textContent='';
+            resultscreen.textContent=data.operandOne;
+            //register the operator sign and store it
+            data.sign=sign;
+            resultscreen.textContent+=data.sign;
+            flag=false;
+        }
+        else 
+        {
+            return;
+        }
+    }
+    else//calculation after the second operand has been typed
+    {
+        if(getInputScreenStatus())
+        {
+            data.operandTwo=inputscreen.textContent;
+            inputscreen.textContent='';
+            data.operandOne=generateResult();
+            resultscreen.textContent=data.operandOne;
+            data.operandTwo='';
+            //if sign is not '=' then update the operator
+            if(sign!=='=')
+            {
+               data.sign=sign;
+               resultscreen.textContent+=data.sign;
+            }
+            //if  sign is '=' reintialize data.sign to empty
+            else
+            {
+               data.sign=''
+            }
+        }
+        //if second operand has not been typed yet
+        else
+        {
+            //if there is  existing operator inside data.sign
+            if(data.sign!=='')
+            {
+                //update only if sign is not '='
+                if(sign!=='=')
+                {
+                    data.sign=sign;
+                    let text=resultscreen.textContent;
+                    text=text.slice(0,text.length-1)+data.sign;
+                    resultscreen.textContent=text;
+                }
+            }
+            //if no operator inside  data.sign is present
+            else
+            {
+                if(sign!=='=')
+                {
+                    data.sign=sign;
+                    resultscreen.textContent+=data.sign;
+                }
+            }
+        }
+    }
+}
