@@ -141,3 +141,20 @@ function generateCalculationSequence(sign)//
         }
     }
 }
+function generateResult()
+{   let result;
+    switch(data.sign)
+    {
+        case '+':result=add(+data.operandOne,+data.operandTwo);
+                 break;       
+        case '-':result=subtract(+data.operandOne,+data.operandTwo);
+                  break;
+        case '*':result=multiply(+data.operandOne,+data.operandTwo);
+                  break;
+        case '/':result=divide(+data.operandOne,+data.operandTwo);
+                  break;
+        case '%':result=giveRemainder(+data.operandOne,+data.operandTwo);
+                  break;
+    }
+    return result;
+}
