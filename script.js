@@ -164,5 +164,12 @@ function generateResult()
 }
 function isFloat(num)
 {
-    return num%1==0?true:false;
+    if(`${num}`.indexOf('.')!==-1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
