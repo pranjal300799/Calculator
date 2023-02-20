@@ -70,3 +70,7 @@ function displayOnScreen(inputType,input)
        generateCalculationSequence(input,flag);
     }
 }
+function getInputScreenStatus()
+{
+    return (inputscreen.textContent!=='')?true:false;
+}
