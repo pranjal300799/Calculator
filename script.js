@@ -6,6 +6,7 @@ const data=
 };
 let dotCounter=0;
 let flag=true;
+let powerbutton='off';
 function add(a,b)
 {
     let result=a+b;
@@ -45,9 +46,8 @@ function addEvents()
     let operators=document.querySelectorAll('.operator')
     operators.forEach(operator=>operator.addEventListener('click',getInput));
     let reset=document.querySelector('.reset');
-    reset.addEventListener('click',resetCalculator)
+    reset.addEventListener('click',resetCalculator);
 }
-addEvents();
 function getInput(e)
 {  
     let input=e.target.getAttribute('data-key');
@@ -182,10 +182,27 @@ function isFloat(num)
 }
 function resetCalculator()
 {
-    location.reload()
+    location.reload();
 }
 function handleMathError()
 {
     inputscreen.textContent='Resetting...';
     setTimeout(resetCalculator,2000);
 }
+function switchONOFF()
+{   
+   if(powerbutton==='off')
+   { 
+    addEvents();
+    button.textContent='ON'
+    powerbutton='on';
+   }
+   else
+   {
+    powerbutton='off'
+    resetCalculator();
+   }
+
+}
+let button=document.querySelector('.switch');
+button.addEventListener('click',switchONOFF);
