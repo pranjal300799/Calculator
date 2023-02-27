@@ -47,6 +47,8 @@ function addEvents()
     operators.forEach(operator=>operator.addEventListener('click',getInput));
     let reset=document.querySelector('.reset');
     reset.addEventListener('click',resetCalculator);
+    let del=document.querySelector('.delete');
+    del.addEventListener('click',deleteLastEntry);
 }
 function getInput(e)
 {  
@@ -136,7 +138,14 @@ function generateCalculationSequence(sign)//
                 {
                     data.sign=sign;
                     let text=resultscreen.textContent;
-                    text=text.slice(0,text.length-1)+data.sign;
+                    if(isNaN(text.charAt(text.length-1)))
+                    {
+                       text=text.slice(0,text.length-1)+data.sign;
+                    }
+                    else
+                    {
+                        text=text+data.sign;
+                    }   
                     resultscreen.textContent=text;
                 }
             }
@@ -206,3 +215,34 @@ function switchONOFF()
 }
 let button=document.querySelector('.switch');
 button.addEventListener('click',switchONOFF);
+function deleteLastEntry()
+{
+    if(inputscreen.textContent!=='')
+    {
+       let text=inputscreen.textContent;
+       text=text.slice(0,(text.length-1));
+       inputscreen.textContent=text;
+    }
+    else
+    {
+        let text=resultscreen.textContent;
+        if(isNaN(text.charAt(text.length-1)))
+        {
+          text=text.slice(0,(text.length-1));
+          data.sign='initial';
+        }
+        else
+        {
+            text=text.slice(0,(text.length-1));
+            data.operandOne=+text;
+        }  
+        resultscreen.textContent=text;
+        if(text==='')
+        {
+            data.sign='initial';
+            data.operandOne=''
+            flag=true;
+            return;
+        }
+    }
+}
