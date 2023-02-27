@@ -4,14 +4,14 @@ body
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    background-color:rgb(255, 255, 255);
+    background-image:linear-gradient(to bottom,rgb(238, 103, 209),rgb(230, 190, 106));
     margin:0;
 
 }
 .header
 {   
     font-size:80px;
-    color:orangered;
+    color:rgb(247, 247, 247);
     display:flex;
     justify-content:center;
     height:10%;
@@ -45,12 +45,15 @@ div.delete
 .footer
 {
     flex:0;
-    font-size:60px;
-    color:rgb(255, 0, 0);
+    font-size:40px;
+    color:rgb(153, 57, 57);
     display:flex;
     justify-content:center;
+    align-items:center;
     height:15%;
     background-color: pink;
+    gap:20px;
+    padding:10px;
 }
 .outline
 {   
@@ -70,7 +73,7 @@ div.delete
 {
     height:150px;
     border:5px solid orangered;
-    background-color: rgb(226, 166, 221);
+    background-color: rgb(255, 255, 255);
     border-radius: 30px;
     font-size:50px;
     display:flex;
@@ -135,4 +138,19 @@ div.delete
 .digit:hover,.operator:hover
 {
    transform:scale(0.9);
+}
+img
+{
+  height:45px;
+  width:45px;
+  transition:all 0.4s ease;
+  border-radius:20px;
+}
+img:hover
+{  
+    transform:rotate(360deg);
+}
+a
+{
+    height:45px;
 }
