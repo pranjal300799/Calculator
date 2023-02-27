@@ -25,7 +25,8 @@ function multiply(a,b)
 function divide(a,b)
 {
     let result=(a*1.0)/b;
-    if (isNaN(result))
+    console.log(result);
+    if (isNaN(result)||result===Infinity)
     {
         handleMathError();
         return 'MathError';
