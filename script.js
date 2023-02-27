@@ -25,7 +25,6 @@ function multiply(a,b)
 function divide(a,b)
 {
     let result=(a*1.0)/b;
-    console.log(result);
     if (isNaN(result)||result===Infinity)
     {
         handleMathError();
@@ -36,6 +35,11 @@ function divide(a,b)
 function giveRemainder(a,b)
 {
     let result =a%b;
+    if (isNaN(result)||result===Infinity)
+    {
+        handleMathError();
+        return 'MathError';
+    }
     return isFloat(result)?result.toFixed(2):result;
 }
 const inputscreen=document.querySelector('.screen .input');
