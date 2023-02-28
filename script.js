@@ -221,7 +221,7 @@ function switchONOFF()
    {
     powerbutton='off';
     button.textContent='OFF';
-    resetCalculator();
+    location.reload();
    }
 
 }
