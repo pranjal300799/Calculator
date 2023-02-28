@@ -78,12 +78,17 @@ function displayOnScreen(inputType,input)
     if(!isNaN(input)||(input==='.'&&dotCounter===0))
     {   
         if(data.sign!=='')//prevent input if no operator is present inside data.sign
-        {
+        {  
+            if(input==='.')
+            {
+                if(inputscreen.textContent==='')
+                {
+                    inputscreen.textContent='0';
+                }
+                dotCounter=1;
+            } 
            inputscreen.textContent+=input;
-           if(input==='.')
-           {
-            dotCounter=1;
-           }
+           
         }
     }
     else if(input!=='.')
