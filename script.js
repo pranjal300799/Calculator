@@ -196,7 +196,13 @@ function isFloat(num)
 }
 function resetCalculator()
 {
-    location.reload();
+    data.operandOne='';
+    data.operandTwo='';
+    data.sign='initial';
+    dotCounter=0;
+    flag=true;
+    inputscreen.textContent='';
+    resultscreen.textContent='';
 }
 function handleMathError()
 {
@@ -208,12 +214,13 @@ function switchONOFF()
    if(powerbutton==='off')
    { 
     addEvents();
-    button.textContent='ON'
+    button.textContent='ON';
     powerbutton='on';
    }
    else
    {
-    powerbutton='off'
+    powerbutton='off';
+    button.textContent='OFF';
     resetCalculator();
    }
 
