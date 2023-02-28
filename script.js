@@ -80,9 +80,13 @@ function displayOnScreen(inputType,input)
         if(data.sign!=='')//prevent input if no operator is present inside data.sign
         {
            inputscreen.textContent+=input;
+           if(input==='.')
+           {
+            dotCounter=1;
+           }
         }
     }
-    else
+    else if(input!=='.')
     {  
        generateCalculationSequence(input,flag);
     }
@@ -104,6 +108,7 @@ function generateCalculationSequence(sign)//
             data.sign=sign;
             resultscreen.textContent+=data.sign;
             flag=false;
+            dotCounter=0;
         }
         else 
         {
@@ -120,6 +125,7 @@ function generateCalculationSequence(sign)//
             data.operandOne=generateResult(); 
             resultscreen.textContent=data.operandOne;
             data.operandTwo='';
+            dotCounter=0;
             //if sign is not '=' then update the operator
             if(sign!=='=')
             {
@@ -232,7 +238,12 @@ function deleteLastEntry()
     if(inputscreen.textContent!=='')
     {
        let text=inputscreen.textContent;
+       let lastChar=text.charAt(text.length-1);
        text=text.slice(0,(text.length-1));
+       if(lastChar==='.')
+       {
+        dotCounter=0;
+       }
        inputscreen.textContent=text;
     }
     else
@@ -241,7 +252,7 @@ function deleteLastEntry()
         if(isNaN(text.charAt(text.length-1)))
         {
           text=text.slice(0,(text.length-1));
-          data.sign='initial';
+          data.sign='';
         }
         else
         {
@@ -251,10 +262,7 @@ function deleteLastEntry()
         resultscreen.textContent=text;
         if(text==='')
         {
-            data.sign='initial';
-            data.operandOne=''
-            flag=true;
-            return;
+            resetCalculator();
         }
     }
 }
